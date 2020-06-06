@@ -1,0 +1,100 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Projeto</title>
+  <link href="style.css" rel="stylesheet">
+  <link href='https://fonts.googleapis.com/css?family=Teko' rel='stylesheet'>
+  <script src="script.js" defer></script>
+  <script src="ajax.js" defer></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
+  <!-- fontawesome -->
+  <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!-- weather icons -->
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.9/css/weather-icons.min.css">
+
+</head>
+
+<body>
+  <i id=BackImage class="p"></i>
+
+  <!-- header -->
+
+  <div id="navbar-box">
+    <nav class="navbar">
+      <a href="#" class="navbar-brand" style"left=0%">
+        <i class="fa fa-sun-o"></i>
+        <strong>Home</strong>Controll
+      </a>
+
+      <!-- horas -->
+      <div id="relogio">
+        <div class="relogio-box">
+          <div class="date-hidden"> DD - MM - YYYY </div>
+          <div class="rel-hidden"> HH : MM : SS </div>
+        </div>
+      </div>
+      <!-- bar weather -->
+      <div class="weather-head">
+        <div class="row">
+
+          <div id="estado" class="col-6 text-center">
+            <i id="icon-estado" class="wi wi-refresh"></i>
+            <p class="est"><strong>-</strong></p>
+          </div>
+          <div class="temperature">
+            <strong>-</strong>
+            <i class="wi wi-celsius"></i>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+  <div id=FrontPanel>
+    <!--Login-->
+    <div id="box-login">
+      <form class="box" action="index.html" method="post">
+        <div classe="header-box text-center" onclick="document.getElementById('box-login').style.display='none',
+                       document.getElementById('clock-form').style.display='flex',
+                       document.getElementById('relogio').style.display='none'">
+          <h3 style="font-size: 32px;">Bem-Vindo</h3>
+
+        </div>
+        <input id="username" type="text" value="Farmer" disabled>
+        <input id="password" type="password" name="" placeholder="Password">
+        <input type="carregar" name="" value="Login" onclick="getInfo()">
+      </form>
+    </div>
+    <!--Avatar logo-->
+    <div class="login-avatar" onclick="document.getElementById('clock-form').style.display='none',
+           document.getElementById('box-login').style.display='block',
+           document.getElementById('relogio').style.display='block'">
+    </div>
+
+    <!--Relogio-->
+
+    <div id="clock-form">
+      <div class="clock-box">
+        <span></span>
+        <span></span>
+        <span></span>
+        <div class="clock">HH : MM : SS </div>
+        <div class="date"> DD - MM - YYYY </div>
+      </div>
+    </div>
+  </div>
+  <!---------------------BackPage----------------------------------->
+  <div id=BackPage class="painel">
+    <div class="ToogleIR">
+      <a href="#" class="TIR" id="btnToggle">
+      <strong>Toogle</strong> Irrigation
+      <i class="fa fa-power-off"></i>
+      </a>
+    </div>
+  </div>
+  <script src="weather.js" defer></script>
+</body>
+
+</html>
